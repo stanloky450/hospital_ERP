@@ -9,7 +9,9 @@
     "test": "jest --coverage",
     "test:watch": "jest --watch",
     "lint": "eslint src/**/*.js",
-    "lint:fix": "eslint src/**/*.js --fix"
+    "lint:fix": "eslint src/**/*.js --fix",
+    "seed": "node src/seeders/index.js",
+    "seed:delete": "node src/seeders/index.js --delete"
   },
   "keywords": [
     "hospital",
