@@ -15,11 +15,11 @@ router.use(protect);
 
 router.route('/')
   .get(getPatients)
-  .post(restrictTo('Admin', 'Doctor', 'Receptionist'), createPatient);
+  .post(restrictTo('Super Admin', 'Admin', 'Doctor', 'Receptionist', 'Nurse', 'Cashier'), createPatient);
 
 router.route('/:id')
   .get(getPatient)
-  .put(restrictTo('Admin', 'Doctor', 'Receptionist'), updatePatient)
+  .put(restrictTo('Super Admin', 'Admin', 'Doctor', 'Receptionist', 'Nurse', 'Cashier'), updatePatient)
   .delete(restrictTo('Super Admin', 'Admin'), deletePatient);
 
 module.exports = router;
